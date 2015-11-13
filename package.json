@@ -1,0 +1,36 @@
+{
+  "name": "walker-randolph-smith",
+  "version": "0.0.1",
+  "description": "Personal website.",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-jest": "*",
+    "jest-cli": "0.5.8",
+    "babel-core": "5.2.9",
+    "babel-loader": "5.0.0",
+    "babel-runtime": "5.2.9",
+    "jsxhint": "^0.9.0",
+    "jshint": "^2.5.11",
+    "jshint-stylish": "^1.0.0",
+    "underscore": "~1.7.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": ["js"],
+    "moduleFileExtensions": ["js", "json"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/walkerrandolphsmith/walkerrandolphsmith"
+  },
+  "author": [
+    "Walker Smith"
+  ],
+  "private": true,
+  "bugs": {
+    "url": "http://github.com/walkerrandolphsmith/walkerrandolphsmith.github.com/issues"
+  }
+}
