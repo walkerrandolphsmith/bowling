@@ -35,4 +35,17 @@ describe("Game", () => {
 				expect(sut.getScore()).toEqual(20);
 		});
 	});
+
+	describe("Given a game with alternating 2 and 3 rolls", () => {
+		beforeEach(() => {
+			for(var i =0; i < 10; i++){
+				sut.roll(2);
+				sut.roll(3);
+			}
+		});
+
+		it('when calculating the score, then the score should equal 50', function(){
+				expect(sut.getScore()).toEqual(50);
+		});
+	});
 });
