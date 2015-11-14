@@ -98,4 +98,16 @@ describe("Game", () => {
 				expect(sut.getScore()).toEqual(81);
 		});
 	});
+
+	describe("Given a perfect game", () => {
+		beforeEach(() => {
+			for(var i = 0; i < 12; i++){
+				sut.roll(10);
+			}
+		});
+
+		it('when calculating the score, then the score should equal 300', function(){
+				expect(sut.getScore()).toEqual(300);
+		});
+	});
 });
