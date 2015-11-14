@@ -48,4 +48,14 @@ describe("Game", () => {
 				expect(sut.getScore()).toEqual(50);
 		});
 	});
+
+	describe("Given a game with one roll", () => {
+		beforeEach(() => {
+			sut.roll(2);
+		});
+
+		it('when calculating the score, then the score should equal 0', function(){
+				expect(sut.getScore()).toEqual(0);
+		});
+	});
 });
