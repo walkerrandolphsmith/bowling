@@ -2,7 +2,7 @@ jest.dontMock('./../src/game');
 
 describe("Game", () => {
 	let sut;
-	before(() => {
+	beforeEach(() => {
 		sut = require('./../src/game')();
 	});
 
@@ -21,6 +21,18 @@ describe("Game", () => {
 
 		it('when calculating the score, then the score should equal 0', () => {
 			expect(sut.getScore()).toEqual(0);
+		});
+	});
+
+	describe("Given a game with a 1's rolled", () => {
+		beforeEach(() => {
+			for(var i =0; i < 20; i++){
+				sut.roll(1)
+			}
+		});
+
+		it('when calculating the score, then the score should equal 20', function(){
+				expect(sut.getScore()).toEqual(20);
 		});
 	});
 });
