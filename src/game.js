@@ -13,7 +13,7 @@ export default function() {
 
 	function isStrike(i){ return rolls[i] === 10; }
 
-	function strikeBonus(i){ return rolls[i+2] + rolls[i+3]; }
+	function strikeBonus(i){ return rolls[i+1] + rolls[i+2]; }
 
 	return {
 		getScore: function() {
@@ -22,14 +22,16 @@ export default function() {
 			_.times(10, () => {
 				if(isSpare(frame))
 					score += 10 + spareBonus(frame);
-				else if(isStrike(frame))
+				else if(isStrike(frame)){
 					score += 10 + strikeBonus(frame);
+					frame--;
+				}
 				else if(isFrameClosed(frame))
 					score += frameScore(frame);
 				frame += 2;
 			});
 			return score;
 		},
-		roll: function(pins) { rolls.push(pins); if(pins === 10) rolls.push(true); }
+		roll: function(pins) { rolls.push(pins); }
 	}
 }
