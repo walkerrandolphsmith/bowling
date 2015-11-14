@@ -1,4 +1,5 @@
 jest.dontMock('./../src/game');
+jest.dontMock('lodash');
 
 describe("Game", () => {
 	let sut;
