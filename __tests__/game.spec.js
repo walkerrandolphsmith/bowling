@@ -81,7 +81,7 @@ describe("Game", () => {
 		});
 
 		it('when calculating the score, then the score should include the bonus', function(){
-				expect(sut.getScore()).toEqual(23);
+				expect(sut.getScore()).toEqual(26);
 		});
 	});
 });
