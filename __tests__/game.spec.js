@@ -59,4 +59,17 @@ describe("Game", () => {
 				expect(sut.getScore()).toEqual(0);
 		});
 	});
+
+	describe("Given a game with a spare", () => {
+		beforeEach(() => {
+			sut.roll(3);
+			sut.roll(7);
+			sut.roll(4);
+			sut.roll(2);
+		});
+
+		it('when calculating the score, then the score should include the bonus', function(){
+				expect(sut.getScore()).toEqual(20);
+		});
+	});
 });
