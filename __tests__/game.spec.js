@@ -84,4 +84,18 @@ describe("Game", () => {
 				expect(sut.getScore()).toEqual(26);
 		});
 	});
+
+	describe("Given a turky", () => {
+		beforeEach(() => {
+			sut.roll(10);
+			sut.roll(10);
+			sut.roll(10);
+			sut.roll(5);
+			sut.roll(3);
+		});
+
+		it('when calculating the score, then the score should include the bonus', function(){
+				expect(sut.getScore()).toEqual(81);
+		});
+	});
 });
