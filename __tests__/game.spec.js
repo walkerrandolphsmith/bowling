@@ -72,4 +72,16 @@ describe("Game", () => {
 				expect(sut.getScore()).toEqual(20);
 		});
 	});
+
+	describe("Given a game with a strike", () => {
+		beforeEach(() => {
+			sut.roll(10);
+			sut.roll(5);
+			sut.roll(3);
+		});
+
+		it('when calculating the score, then the score should include the bonus', function(){
+				expect(sut.getScore()).toEqual(23);
+		});
+	});
 });
